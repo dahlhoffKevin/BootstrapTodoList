@@ -1,13 +1,5 @@
-body {
-  background-color: --bs-body-bg-rgb;
-}
-
-.maindiv {
+.headline {
   padding-top: 20px;
-  padding-left: 100px;
-}
-
-.innerBody-headline {
   padding-bottom: 10px;
 }
 
