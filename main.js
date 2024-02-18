@@ -21,9 +21,6 @@ function createNewTodoElement() {
 
   todoCounter += 1;
 
-  //input todo
-  var todoInput = document.getElementById("todoInput").value;
-
   //create a tag
   var outerTodoContainer = document.createElement("a");
   outerTodoContainer.href = "#";
@@ -31,65 +28,55 @@ function createNewTodoElement() {
   outerTodoContainer.className = "list-group-item list-group-item-action";
   outerTodoContainer.setAttribute("aria-current", "true");
 
-  //create div
+  //create div for date
   var divForDate = document.createElement("div");
   divForDate.classList.add("d-flex", "w-100", "justify-content-between");
+  outerTodoContainer.appendChild(divForDate);
 
-  //create h5 for date
+  //create date
   var date = document.createElement("h5");
   date.classList.add("mb-1");
   date.innerHTML = returnCurrentDate()[0];
+  divForDate.appendChild(date);
 
-  //create small time
+  //create time
   var time = document.createElement("small");
   time.innerHTML = returnCurrentDate()[1];
+  divForDate.appendChild(time);
 
   //create p todo headline
   var todo = document.createElement("p");
   todo.classList.add("mb-1");
-  todo.innerHTML = todoInput;
-
-  //create small headline subtasks
-  // var headlineSubtasks = document.createElement("small");
-  // headlineSubtasks.innerHTML = "Subtasks";
-
-  //create small for subtasks
-  var subtaskContainer = document.createElement("small");
-
-  //create ul
-  var subtaskList = document.createElement("ul");
-  subtaskList.classList.add("list-group");
-  subtaskList.style = "margin-top: 5px;";
-
-  //create subtask
-  var subtask = document.createElement("li");
-  subtask.classList.add("list-group-item");
-
-  //create input
-  // var subtaskCounter = 0;
-  // var subtaskCheckbox = document.createElement("input");
-  // subtaskCheckbox.classList.add("form-check-input", "me-1");
-  // subtaskCheckbox.type = "checkbox";
-  // subtaskCheckbox.value = "";
-  // subtaskCheckbox.id = "todo" + todoCounter + "_CheckboxStretched";
-
-  //create label
-  // var subtaskLabel = document.createElement("label");
-  // subtaskLabel.classList.add("form-check-label", "stretched-link");
-  // subtaskLabel.htmlFor = "todo" + todoCounter + "_labelStretched";
-  // subtaskLabel.innerHTML = "Milch";
-
-  // append elements
-  outerTodoContainer.appendChild(divForDate);
-  divForDate.appendChild(date);
-  divForDate.appendChild(time);
+  todo.innerHTML = document.getElementById("todoInput").value;
   outerTodoContainer.appendChild(todo);
-  //outerTodoContainer.appendChild(headlineSubtasks);
-  outerTodoContainer.appendChild(subtaskContainer);
-  //subtaskContainer.appendChild(subtaskList);
-  // subtaskList.appendChild(subtask);
-  // subtask.appendChild(subtaskCheckbox);
-  // subtask.appendChild(subtaskLabel);
+
+  //create div for description
+  var divForDescription = document.createElement("div");
+  divForDescription.classList.add("mb-3");
+  divForDescription.style = "margin-top:10px!important;";
+  outerTodoContainer.appendChild(divForDescription);
+
+  //create description
+  var description = document.createElement("textarea");
+  description.id = "todo_" + todoCounter + "_description";
+  description.classList.add("form-control");
+  description.style = "background-color: #212529;";
+  description.disabled = true;
+  description.innerHTML = document.getElementById("todoDescription").value;
+  divForDescription.appendChild(description);
+
+  //create close button
+  var closeTodoBtn = document.createElement("button");
+  closeTodoBtn.type = "button";
+  closeTodoBtn.classList.add("btn", "btn-primary")
+  closeTodoBtn.style = "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-top: 10px!important;";
+  closeTodoBtn.innerHTML = "Close Todo";
+
+  closeTodoBtn.addEventListener("click", () => {
+    outerTodoContainer.remove()
+  });
+
+  outerTodoContainer.appendChild(closeTodoBtn);
 
   // add to list
   var todoList = document
