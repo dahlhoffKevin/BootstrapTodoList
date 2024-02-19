@@ -68,7 +68,7 @@ function createNewTodoElement() {
   //create close button
   var closeTodoBtn = document.createElement("button");
   closeTodoBtn.type = "button";
-  closeTodoBtn.classList.add("btn", "btn-primary")
+  closeTodoBtn.classList.add("btn", "btn-primary");
   closeTodoBtn.style = "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-top: 10px!important;";
   closeTodoBtn.innerHTML = "Close Todo";
 
@@ -86,6 +86,7 @@ function createNewTodoElement() {
 
   // clear input
   document.getElementById("todoInput").value = "";
+  document.getElementById("todoDescription").value = "";
 }
 
 /**
