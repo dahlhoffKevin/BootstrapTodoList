@@ -14,6 +14,19 @@
     />
   </head>
   <body data-bs-theme="dark">
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="/assets/brand/bootstrap-logo.svg"
+            alt="Logo"
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+      </div>
+    </nav>
     <!-- Headline -->
     <div class="container text-center">
       <h1 class="headline">Todo List</h1>
@@ -34,9 +47,16 @@
                 placeholder="Input Todo"
               />
             </div>
-            <div class="mb-3" style="margin-top: 10px;">
-              <label for="todoDescription" class="form-label">Description</label>
-              <textarea class="form-control" id="todoDescription" rows="3" placeholder="Input Description"></textarea>
+            <div class="mb-3" style="margin-top: 10px">
+              <label for="todoDescription" class="form-label"
+                >Description</label
+              >
+              <textarea
+                class="form-control"
+                id="todoDescription"
+                rows="3"
+                placeholder="Input Description"
+              ></textarea>
             </div>
             <!-- Add Todo Button -->
             <button id="addTodoBtn" type="button" class="btn btn-primary">
@@ -49,48 +69,10 @@
           <div class="container text-left">
             <div class="row">
               <div id="todoList" class="col">
-                <ul class="list-group">
-                  <!-- <div id="initialTodoHeadLine">
+                <ul id="list-group" class="list-group">
+                  <div id="initialTodoHeadLine">
                     <h4>Add Todos to be displayed!</h4>
-                  </div> -->
-                  <!-- <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">17.02.2024</h5>
-                      <small>15:44</small>
-                    </div>
-                    <p class="mb-1">Einkaufen gehen</p>
-                    <small>
-                      Subtasks
-                    </small>
-                    <small>
-                      <ul class="list-group" style="margin-top: 5px;">
-                        <li class="list-group-item">
-                          <input class="form-check-input me-1" type="checkbox" value="" id="todo1_firstCheckboxStretched">
-                          <label class="form-check-label stretched-link" for="todo1_firstCheckboxStretched">Milch</label>
-                        </li>
-                        <li class="list-group-item">
-                          <input class="form-check-input me-1" type="checkbox" value="" id="todo1_secondCheckboxStretched">
-                          <label class="form-check-label stretched-link" for="todo1_secondCheckboxStretched">Zucker</label>
-                        </li>
-                        <li class="list-group-item">
-                          <input class="form-check-input me-1" type="checkbox" value="" id="todo1_thirdCheckboxStretched">
-                          <label class="form-check-label stretched-link" for="todo1_thirdCheckboxStretched">Kaffee</label>
-                        </li>
-                        <li class="list-group-item">
-                          <input class="form-check-input me-1" type="checkbox" value="" id="todo1_fourthCheckboxStretched">
-                          <label class="form-check-label stretched-link" for="todo1_fourthCheckboxStretched">Wurst</label>
-                        </li>
-                        <li class="list-group-item">
-                          <input class="form-check-input me-1" type="checkbox" value="" id="todo1_fivthCheckboxStretched">
-                          <label class="form-check-label stretched-link" for="todo1_fivthCheckboxStretched">Käse</label>
-                        </li>
-                      </ul>
-                    </small>
-                    <button type="button" class="btn btn-primary"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; margin-top:10px!important;">
-                      Close Todo
-                    </button>
-                  </a> -->
+                  </div>
                 </ul>
               </div>
             </div>
